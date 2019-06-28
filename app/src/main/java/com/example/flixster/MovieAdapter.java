@@ -102,18 +102,21 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         // track view objects
-        ImageView ivPosterImage;
-        ImageView ivBackdropImage;
-        TextView tvTitle;
-        TextView tvOverview;
+        /*@BindView(R.id.ivPosterImage)*/ ImageView ivPosterImage;
+        /*@BindView (R.id.ivBackdropImage)*/ ImageView ivBackdropImage;
+        /*@BindView (R.id.tvOverview)*/ TextView tvTitle;
+        /*@BindView (R.id.tvTitle)*/ TextView tvOverview;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+
             // lookup view objects by id
             ivPosterImage = (ImageView) itemView.findViewById(R.id.ivPosterImage);
             ivBackdropImage = (ImageView) itemView.findViewById(R.id.ivBackdropImage);
             tvOverview = (TextView) itemView.findViewById(R.id.tvOverview);
             tvTitle = (TextView) itemView.findViewById(R.id.tvTitle);
+
+            // ButterKnife.bind(this, itemView);
 
             // add this as the itemView's OnClickListener
             itemView.setOnClickListener(this);

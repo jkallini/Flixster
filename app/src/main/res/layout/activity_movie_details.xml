@@ -64,4 +64,5 @@
         android:textColor="#C0ADAD"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
 </android.support.constraint.ConstraintLayout>

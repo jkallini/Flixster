@@ -12,8 +12,9 @@ public class Movie {
     public String overview;
     public String posterPath; // only the path
     public String backdropPath;
-    public Double voteAverage; // ratings value
+    public Double voteAverage;
     public String releaseDate;
+    public Integer id;
 
     // no-arg, empty constructor required for Parceler
     public Movie() {}
@@ -26,6 +27,7 @@ public class Movie {
         backdropPath = object.getString("backdrop_path");
         voteAverage = object.getDouble("vote_average");
         releaseDate = object.getString("release_date");
+        id = object.getInt("id");
     }
 
     public String getTitle() {
@@ -50,5 +52,9 @@ public class Movie {
 
     public String getReleaseDate() {
         return releaseDate;
+    }
+
+    public Integer getId() {
+        return id;
     }
 }
