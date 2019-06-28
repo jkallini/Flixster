@@ -1,4 +1,4 @@
-package com.example.flixter;
+package com.example.flixster;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.example.flixter", appContext.getPackageName());
+        assertEquals("com.example.flixster", appContext.getPackageName());
     }
 }

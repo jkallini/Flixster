@@ -1,4 +1,4 @@
-package com.example.flixter;
+package com.example.flixster;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -7,8 +7,8 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.example.flixter.models.Config;
-import com.example.flixter.models.Movie;
+import com.example.flixster.models.Config;
+import com.example.flixster.models.Movie;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;

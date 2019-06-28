@@ -1,4 +1,4 @@
-package com.example.flixter;
+package com.example.flixster;
 
 import android.content.Context;
 import android.content.res.Configuration;
@@ -11,8 +11,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.example.flixter.models.Config;
-import com.example.flixter.models.Movie;
+import com.example.flixster.models.Config;
+import com.example.flixster.models.Movie;
 
 import java.util.ArrayList;
 
