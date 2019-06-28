@@ -2,16 +2,21 @@ package com.example.flixster.models;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.parceler.Parcel;
 
+@Parcel // class is Parcelable
 public class Movie {
 
-    // values from API
-    private String title;
-    private String overview;
-    private String posterPath; // only the path
-    private String backdropPath;
+    // values from API, fields must be public for Parceler
+    public String title;
+    public String overview;
+    public String posterPath; // only the path
+    public String backdropPath;
 
-    // initialize from JSON data
+    // no-arg, empty constructor required for Parceler
+    public Movie() {}
+
+    // initialize from JSON data,
     public Movie(JSONObject object) throws JSONException {
         title = object.getString("title");
         overview = object.getString("overview");
