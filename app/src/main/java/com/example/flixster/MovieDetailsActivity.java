@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -36,11 +38,16 @@ public class MovieDetailsActivity extends AppCompatActivity {
     // instance fields
     AsyncHttpClient client;
 
+    // key
+    String key;
+
     // the view objects
     @BindView(R.id.tvTitle) TextView tvTitle;
     @BindView (R.id.tvOverview) TextView tvOverview;
     @BindView (R.id.tvReleaseDate) TextView tvReleaseDate;
     @BindView (R.id.rbVoteAverage) RatingBar rbVoteAverage;
+    @BindView (R.id.tvMovieBackdrop)
+    ImageView tvMovieBackdrop;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,7 +79,15 @@ public class MovieDetailsActivity extends AppCompatActivity {
         float voteAverage = movie.getVoteAverage().floatValue();
         rbVoteAverage.setRating(voteAverage > 0 ? voteAverage / 2.0f : voteAverage);
 
-        //getVideoTrailer();
+        // initialize client
+        client = new AsyncHttpClient();
+
+        tvMovieBackdrop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getVideoTrailer();
+            }
+        });
 
     }
 
@@ -92,7 +107,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
                 try {
                     JSONArray results = response.getJSONArray("results");
                     JSONObject obj = results.getJSONObject(0);
-                    String key = obj.getString("key");
+                    key = obj.getString("key");
 
                     Log.i(TAG, "Got the results array");
 
@@ -122,18 +137,4 @@ public class MovieDetailsActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
         }
     }
-
-    // get url movies/movie-id/video
-    // int id = movie.getId();
-    // Create an endpoint
-    // get JSON object
-    // get results
-    // get string "key"
-    // don't notify adapter
-
-    // String key = "xx...."
-    // Intent in = new Intent(MDA, MT)
-    // in.putExtra("videoId", key)
-    // StartActivity(in);
-
 }

@@ -39,48 +39,4 @@ public class MovieTrailerActivity extends YouTubeBaseActivity {
             }
         });
     }
-
-    // String video_id = getIntent.getString
-    // extra("video_id")
-
-
-    // BELOW IS IN WRONG FILE
-    // CREATE ASYNC HTTP CLIENT
-    // getConfig
-
-    /*
-    // get the
-    private void getVideo() {
-        // create the url
-        String url = String.format("%s/movie/%s/videos", API_BASE_URL, Integer.toString());
-        // set the request parameters
-        RequestParams params = new RequestParams();
-        params.put(API_KEY_PARAM, getString(R.string.api_key)); // API key, always required
-        // execute a GET request expecting a JSON object response
-        client.get(url, params, new JsonHttpResponseHandler() {
-            @Override
-            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
-                try {
-                    JSONArray results = response.getJSONArray("results");
-                    //iterate through result set and create Movie objects
-                    for (int i = 0; i < results.length(); i++) {
-                        Movie movie = new Movie(results.getJSONObject(i));
-                        movies.add(movie);
-                        // notify adapter that a row was added
-                        adapter.notifyItemInserted(movies.size() - 1);
-                    }
-                    Log.i(TAG, String.format("Loaded %s movies", results.length()));
-                } catch (JSONException e) {
-                    logError("Failed to parse now playing movies", e, true);
-                }
-            }
-
-            @Override
-            public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
-                logError("Failed to get data from now playing endpoint", throwable, true);
-            }
-        });
-    }
-    */
-
 }
